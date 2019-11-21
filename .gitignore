@@ -11,7 +11,8 @@ local.properties
 .loadpath
 .recommenders
 tst/
-
+run/
+/run/
 # External tool builders
 .externalToolBuilders/
 
