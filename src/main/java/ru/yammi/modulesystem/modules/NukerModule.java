@@ -7,7 +7,6 @@ import ru.yammi.eventsystem.EventTarget;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CPacketPlayerDigging;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -49,7 +48,6 @@ public class NukerModule
                                 }
                             }
                         }
-                        this.stop();
                     }
                 }.start();
             }

@@ -7,9 +7,9 @@ import java.util.List;
 final class EventHandle {
 
     private Object handle;
-    private List methods = new ArrayList();
+    private List<Method> methods = new ArrayList<Method>();
 
-    public EventHandle(Object object, List list) {
+    public EventHandle(Object object, List<Method> list) {
         this.handle = object;
         this.methods = list;
     }
@@ -26,7 +26,7 @@ final class EventHandle {
         this.handle = object;
     }
 
-    public void setMethods(List list) {
+    public void setMethods(List<Method> list) {
         this.methods = list;
     }
 }

@@ -106,7 +106,7 @@ public class ModuleGuiElement {
                 }
             }
             if ((!this.getModule().getValues().isEmpty() || !this.getModule().getBooleanValues().isEmpty()) && Mouse.isButtonDown(1) && this.isMouseTimeReached()) {
-                boolean bl = this.isSettingsOpened = !this.isSettingsOpened;
+                this.isSettingsOpened = !this.isSettingsOpened;
             }
             if (Keyboard.getEventKey() != 0 && Keyboard.getEventKeyState() && this.mc.currentScreen != null && this.mc.currentScreen instanceof ClickGUIScreen) {
                 int n5 = Keyboard.getEventKey();
@@ -209,7 +209,6 @@ public class ModuleGuiElement {
         float f = asaIBIYOhmSolWc.getFloatValue("Red Color");
         float f2 = asaIBIYOhmSolWc.getFloatValue("Green Color");
         float f3 = asaIBIYOhmSolWc.getFloatValue("Blue Color");
-        float[] arrf = new float[]{f, f2, f3, 1.0f};
         GL11.glEnable(3042);
         GL11.glDisable(3553);
         GL11.glBlendFunc(770, 771);
@@ -305,7 +304,6 @@ public class ModuleGuiElement {
 
     public void mouseJoinSlider(SliderValue dBUsaySotRtyDdU, int n, int n2, int n3) {
         int n4 = this.x;
-        int n5 = this.y;
         int n6 = n4 + 80;
         int n7 = n;
         int n8 = n6 + 75;

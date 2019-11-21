@@ -79,7 +79,8 @@ public class ModuleController {
         Field field;
         try {
             field = ReflectionHelper.getField(RenderGlobal.class, "damagedBlocks", "field_72738_E", "x");
-            Map map = (Map) field.get(this.mc.renderGlobal);
+            @SuppressWarnings("unchecked")
+			Map<Integer, DestroyBlockProgress> map = (Map<Integer, DestroyBlockProgress>) field.get(this.mc.renderGlobal);
             if (map.isEmpty()) {
                 map.put(0, new DestroyBlockProgress(this.mc.player.getEntityId(), new BlockPos(0, 0, 0)));
             }

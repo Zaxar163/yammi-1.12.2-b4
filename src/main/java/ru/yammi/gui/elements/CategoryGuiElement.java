@@ -17,7 +17,7 @@ public class CategoryGuiElement {
 
     private ModuleCategory category;
     private boolean dragging = false;
-    private List<ModuleGuiElement> guiList = new ArrayList();
+    private List<ModuleGuiElement> guiList = new ArrayList<>();
     private int lastX = 0;
     private int lastY = 0;
     private Minecraft mc = Minecraft.getMinecraft();

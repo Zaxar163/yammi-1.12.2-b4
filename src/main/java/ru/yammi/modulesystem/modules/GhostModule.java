@@ -4,7 +4,6 @@ import ru.yammi.modulesystem.Module;
 import ru.yammi.modulesystem.ModuleCategory;
 import ru.yammi.eventsystem.events.UpdateEvent;
 import ru.yammi.eventsystem.EventTarget;
-import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CPacketPlayer;
 
 public class GhostModule

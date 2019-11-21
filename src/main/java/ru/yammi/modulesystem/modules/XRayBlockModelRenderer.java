@@ -17,7 +17,7 @@ import net.minecraft.world.IBlockAccess;
 public class XRayBlockModelRenderer
         extends BlockModelRenderer {
 
-    public static List<Integer> xrayBlocks = new ArrayList();
+    public static List<Integer> xrayBlocks = new ArrayList<>();
 
     public XRayBlockModelRenderer(BlockColors blockColors) {
         super(blockColors);

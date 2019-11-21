@@ -41,7 +41,7 @@ public class HUDModule
                 ++n;
             }
             this.drawString("Coded by InvHacks", 2, 14, this.rainbow(n + n * 200000000L, 1.0f));
-            ArrayList<String> arrayList = new ArrayList();
+            ArrayList<String> arrayList = new ArrayList<>();
             ModuleManager.getModules().stream().forEach(asaIBIYOhmSolWc -> {
                 if (asaIBIYOhmSolWc.getState()) {
                     arrayList.add(String.valueOf(new StringBuilder().append(asaIBIYOhmSolWc.getName()).append(" \u00a7f(\u00a77").append(Keyboard.getKeyName(asaIBIYOhmSolWc.getKeybind())).append("\u00a7f)")));

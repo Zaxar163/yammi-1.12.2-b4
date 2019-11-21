@@ -6,7 +6,6 @@ import ru.yammi.eventsystem.events.UpdateEvent;
 import ru.yammi.eventsystem.EventTarget;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CPacketUseEntity;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.RayTraceResult;

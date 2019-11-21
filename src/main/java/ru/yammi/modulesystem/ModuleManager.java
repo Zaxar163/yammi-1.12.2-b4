@@ -35,7 +35,7 @@ import ru.yammi.modulesystem.modules.XRayModule;
 
 public class ModuleManager {
 
-    private static List<Module> modules = new ArrayList();
+    private static List<Module> modules = new ArrayList<>();
 
     public static void disableModule(String moduleName) {
         Module module = ModuleManager.getModule(moduleName);
@@ -44,7 +44,7 @@ public class ModuleManager {
         }
     }
 
-    public static Module getModule(Class moduleClass) {
+    public static Module getModule(Class<?> moduleClass) {
         for (Module module : modules) {
             if (module.getClass() != moduleClass) {
                 continue;
@@ -76,7 +76,7 @@ public class ModuleManager {
         return false;
     }
 
-    public static boolean isModuleEnabled(Class moduleClass) {
+    public static boolean isModuleEnabled(Class<?> moduleClass) {
         Module module = ModuleManager.getModule(moduleClass);
         if (module != null) {
             return module.getState();

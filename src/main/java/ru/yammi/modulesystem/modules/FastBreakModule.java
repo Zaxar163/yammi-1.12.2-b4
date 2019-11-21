@@ -5,12 +5,9 @@ import ru.yammi.modulesystem.ModuleCategory;
 import ru.yammi.eventsystem.events.UpdateEvent;
 import ru.yammi.eventsystem.EventTarget;
 import net.minecraft.client.multiplayer.PlayerControllerMP;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CPacketPlayerDigging;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.world.World;
 import ru.yammi.helpers.ReflectionHelper;
 
 public class FastBreakModule

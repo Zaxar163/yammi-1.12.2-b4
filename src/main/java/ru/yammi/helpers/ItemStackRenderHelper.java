@@ -23,7 +23,6 @@ public class ItemStackRenderHelper {
                 }
                 Enchantment enchantment2 = enchantment;
                 String string = enchantment2.getTranslatedName(s2).substring(0, 2).toLowerCase();
-                String[] arrstring = new String[]{"Efficiency", "Unbreaking", "Sharpness", "FireAspect", ""};
                 Minecraft.getMinecraft().fontRenderer.drawStringWithShadow(String.valueOf(new StringBuilder().append(String.valueOf(String.valueOf(string))).append("\u00a7b").append(s2)), n, (n2 + n3), -5592406);
                 n3 += Minecraft.getMinecraft().fontRenderer.FONT_HEIGHT;
                 if (i <= 4) {

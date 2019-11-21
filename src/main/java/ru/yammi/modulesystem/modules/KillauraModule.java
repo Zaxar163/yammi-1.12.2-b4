@@ -9,7 +9,6 @@ import java.util.List;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CPacketUseEntity;
 import net.minecraft.util.EnumHand;
 import ru.yammi.config.BooleanValue;
@@ -28,15 +27,14 @@ public class KillauraModule
     }
 
     private List<Entity> collectEntities() {
-        ArrayList arrayList = new ArrayList();
+        ArrayList<Entity> arrayList = new ArrayList<>();
         this.mc.world.loadedEntityList.forEach(entity -> {
             float f = this.getFloatValue("Radius");
             if (entity != null && entity != this.mc.player) {
-                boolean bl;
                 if (entity instanceof EntityPlayer && this.mc.player.getDistance(entity) <= f) {
                     arrayList.add(entity);
                 }
-                if ((bl = this.getBooleanValue("Mobs")) && entity instanceof EntityLivingBase && this.mc.player.getDistance(entity) <= f) {
+                if (this.getBooleanValue("Mobs") && entity instanceof EntityLivingBase && this.mc.player.getDistance(entity) <= f) {
                     arrayList.add(entity);
                 }
             }

@@ -18,8 +18,7 @@ public class InventoryMoveModule
     @EventTarget
     public void onUpdate(UpdateEvent oTTDuKOxgEObFPc2) {
         if (this.getState() && this.mc.currentScreen != null && !(this.mc.currentScreen instanceof GuiChat)) {
-            KeyBinding[] arrkeyBinding;
-            for (KeyBinding keyBinding : arrkeyBinding = new KeyBinding[]{this.mc.gameSettings.keyBindForward, this.mc.gameSettings.keyBindBack, this.mc.gameSettings.keyBindLeft, this.mc.gameSettings.keyBindRight, this.mc.gameSettings.keyBindJump}) {
+            for (KeyBinding keyBinding : new KeyBinding[]{this.mc.gameSettings.keyBindForward, this.mc.gameSettings.keyBindBack, this.mc.gameSettings.keyBindLeft, this.mc.gameSettings.keyBindRight, this.mc.gameSettings.keyBindJump}) {
                 KeyBinding.setKeyBindState(keyBinding.getKeyCode(), Keyboard.isKeyDown(keyBinding.getKeyCode()));
             }
         }

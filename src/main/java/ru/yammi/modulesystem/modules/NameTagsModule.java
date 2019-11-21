@@ -9,7 +9,6 @@ import java.text.DecimalFormat;
 import java.util.List;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -146,7 +145,7 @@ public class NameTagsModule
             ItemStackRenderHelper.renderItemStack(itemStack, n, -19);
             n += 16;
         }
-        NonNullList nonNullList = entityPlayer.inventory.armorInventory;
+        NonNullList<ItemStack> nonNullList = entityPlayer.inventory.armorInventory;
         for (int i = 3; i >= 0; --i) {
             ItemStack itemStack = (ItemStack) nonNullList.get(i);
             if (itemStack == null) {
@@ -169,10 +168,8 @@ public class NameTagsModule
         GL11.glRotatef(this.mc.getRenderManager().playerViewX, 1.0f, 0.0f, 0.0f);
         GL11.glScaled(d4, d4, d4);
         Tessellator tessellator = Tessellator.getInstance();
-        BufferBuilder bufferBuilder = tessellator.getBuffer();
+        tessellator.getBuffer();
         int n = bl ? fontRenderer.getStringWidth(String.valueOf(new StringBuilder().append(String.valueOf(String.valueOf(this.getPlayerName(entityPlayer)))).append(" ").append(this.getHealth(entityPlayer)))) / 2 : fontRenderer.getStringWidth(this.getPlayerName(entityPlayer)) / 2;
-        int n2 = 1879048192;
-        int n3 = 1879048192;
         GLHelper.drawBorderedRect(-n - 2, -this.mc.fontRenderer.FONT_HEIGHT - 6, n + 2, (float) (this.mc.fontRenderer.FONT_HEIGHT + 0.5), 1.0f, -1879048192, 1879048192);
         GL11.glDisable(2929);
         if (!bl) {

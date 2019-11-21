@@ -8,13 +8,13 @@ import ru.yammi.config.SliderValue;
 
 public class Module {
 
-    private List booleanValues = new ArrayList();
+    private List<BooleanValue> booleanValues = new ArrayList<>();
     private ModuleCategory category;
     private int keybind = 0;
     protected Minecraft mc = Minecraft.getMinecraft();
     private String name;
     private boolean state;
-    private List values = new ArrayList();
+    private List<SliderValue> values = new ArrayList<>();
 
     public Module(String string, ModuleCategory xzSCDzduhxVFqcw) {
         this.name = string;

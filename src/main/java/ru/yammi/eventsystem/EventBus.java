@@ -6,7 +6,7 @@ import java.util.List;
 
 public class EventBus {
 
-    private static List<EventHandle> eventHandles = new ArrayList();
+    private static List<EventHandle> eventHandles = new ArrayList<>();
 
     public static void call(Event wvjBXAZZrrBntvi) {
         eventHandles.forEach((lbKkJhSdZboxacB2) -> {

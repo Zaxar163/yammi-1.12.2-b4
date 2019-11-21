@@ -48,9 +48,9 @@ public class ESPModule
             } else {
                 GL11.glColor3f(1.0f, 0.0f, 0.0f);
             }
-            double d = ReflectionHelper.getRenderPosX();
-            double d2 = ReflectionHelper.getRenderPosY();
-            double d3 = ReflectionHelper.getRenderPosZ();
+            ReflectionHelper.getRenderPosX();
+            ReflectionHelper.getRenderPosY();
+            ReflectionHelper.getRenderPosZ();
             double d4 = entity.posX - ReflectionHelper.getRenderPosX() - 0.5;
             double d5 = entity.posY - ReflectionHelper.getRenderPosY();
             double d6 = entity.posZ - ReflectionHelper.getRenderPosZ() - 0.5;

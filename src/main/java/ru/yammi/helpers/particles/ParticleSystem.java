@@ -7,10 +7,8 @@ import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
 public class ParticleSystem {
-
-    private static final float SPEED = 0.1f;
     private int dist = 100;
-    private List<Particle> particleList = new ArrayList();
+    private List<Particle> particleList = new ArrayList<Particle>();
 
     public ParticleSystem(int n) {
         this.addParticles(n);

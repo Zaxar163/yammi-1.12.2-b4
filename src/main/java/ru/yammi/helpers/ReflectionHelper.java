@@ -13,7 +13,7 @@ public class ReflectionHelper {
 
     public static MethodHandles.Lookup lookup;
 
-    public static Field getField(Class class_, String... arrstring) {
+    public static Field getField(Class<?> class_, String... arrstring) {
         for (Field field : class_.getDeclaredFields()) {
             field.setAccessible(true);
             for (String string : arrstring) {
@@ -26,7 +26,7 @@ public class ReflectionHelper {
         return null;
     }
 
-    public static MethodHandle getLookupMethod(Class class_, MethodType methodType, String... arrstring) throws Throwable {
+    public static MethodHandle getLookupMethod(Class<?> class_, MethodType methodType, String... arrstring) throws Throwable {
         for (String string : arrstring) {
             MethodHandle methodHandle = ReflectionHelper.lookup().findVirtual(class_, string, methodType);
             if (methodHandle == null) {
@@ -37,7 +37,7 @@ public class ReflectionHelper {
         return null;
     }
 
-    public static Method getMethod(Class class_, String... arrstring) {
+    public static Method getMethod(Class<?> class_, String... arrstring) {
         for (Method method : class_.getDeclaredMethods()) {
             method.setAccessible(true);
             for (String string : arrstring) {

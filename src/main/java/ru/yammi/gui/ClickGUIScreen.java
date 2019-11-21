@@ -18,7 +18,7 @@ public class ClickGUIScreen
 
     private Minecraft mc = Minecraft.getMinecraft();
     private ParticleSystem particleSystem = new ParticleSystem(200);
-    private List<CategoryGuiElement> tabs = new ArrayList();
+    private List<CategoryGuiElement> tabs = new ArrayList<>();
 
     public ClickGUIScreen() {
         for (ModuleCategory xzSCDzduhxVFqcw : ModuleCategory.values()) {

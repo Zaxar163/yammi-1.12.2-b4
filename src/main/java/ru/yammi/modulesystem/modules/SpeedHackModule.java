@@ -18,7 +18,8 @@ public class SpeedHackModule
     public void onUpdate(UpdateEvent oTTDuKOxgEObFPc2) {
         if (this.getState() && this.mc.player.onGround) {
             if (!(this.mc.player.isSneaking() || this.mc.player.moveForward == 0.0f && this.mc.player.moveStrafing == 0.0f)) {
-                float f;
+                @SuppressWarnings("unused")
+				float f;
                 double d;
                 if (this.mc.player.moveForward > 0.0f && !this.mc.player.collidedHorizontally) {
                     this.mc.player.setSprinting(true);

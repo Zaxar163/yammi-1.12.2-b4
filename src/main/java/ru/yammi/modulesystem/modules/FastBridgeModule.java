@@ -5,7 +5,6 @@ import ru.yammi.modulesystem.ModuleCategory;
 import ru.yammi.eventsystem.events.UpdateEvent;
 import ru.yammi.eventsystem.EventTarget;
 import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 
@@ -21,7 +20,7 @@ public class FastBridgeModule
         if (this.getState()) {
             boolean bl;
             BlockPos blockPos = new BlockPos(this.mc.player).add(0, -1, 0);
-            boolean bl2 = bl = this.mc.world.getBlockState(blockPos).getBlock() == Blocks.AIR;
+            bl = this.mc.world.getBlockState(blockPos).getBlock() == Blocks.AIR;
             if (this.mc.gameSettings.keyBindJump.isKeyDown()) {
                 if (!bl) {
                     this.setjump(false);
