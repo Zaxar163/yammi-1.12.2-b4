@@ -10,5 +10,6 @@ public final class PacketHacks {
 	public static void register() {
 		ModuleManager.registerModule(new JEISelect());
 		ModuleManager.registerModule(new FreeItemBD());
+		ModuleManager.registerModule(new FreeItemHM());
 	}
 }
