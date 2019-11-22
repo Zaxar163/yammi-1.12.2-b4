@@ -18,23 +18,10 @@ public class JEISelect extends PacketHackModule {
 
 	@EventTarget
 	public void onUpdate(UpdateEvent oTTDuKOxgEObFPc2) {
-		if (!super.workable && mc.currentScreen != null && !(mc.currentScreen instanceof GuiContainer))
+		if (!super.workable || !getState() || mc.currentScreen == null || !(mc.currentScreen instanceof GuiContainer))
 			return;
-		boolean newState = Keyboard.isKeyDown(super.getKeybind());
-		if (newState && getState())
-			try {
-				Object runtime = Class.forName("mezz.jei.Internal").getDeclaredMethod("getRuntime").invoke(null);
-				Object itemList = runtime.getClass().getDeclaredMethod("getItemListOverlay").invoke(runtime);
-				Object item = itemList.getClass().getDeclaredMethod("getStackUnderMouse").invoke(itemList);
-				if (item instanceof ItemStack) {
-					ItemStack itemStack = (ItemStack) item;
-					int count = GuiScreen.isShiftKeyDown() ? itemStack.getMaxStackSize() : 1;
-					itemStack = itemStack.copy();
-					itemStack.setCount(count);
-					PacketHackModule.ITEMSTACK = itemStack;
-				}
-			} catch (Exception ignored) {
-			}
+		if (Keyboard.isKeyDown(super.getKeybind()))
+			run();
 	}
 
 	@Override
