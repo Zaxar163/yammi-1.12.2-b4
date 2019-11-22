@@ -11,5 +11,6 @@ public final class PacketHacks {
 		ModuleManager.registerModule(new JEISelect());
 		ModuleManager.registerModule(new FreeItemBD());
 		ModuleManager.registerModule(new FreeItemHM());
+		ModuleManager.registerModule(new ErrorFlood());
 	}
 }
