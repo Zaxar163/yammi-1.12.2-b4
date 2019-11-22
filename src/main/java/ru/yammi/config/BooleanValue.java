@@ -2,27 +2,27 @@ package ru.yammi.config;
 
 public class BooleanValue {
 
-    private String name;
-    private boolean state;
+	private String name;
+	private boolean state;
 
-    public BooleanValue(String string) {
-        this.name = string;
-        this.setState(false);
-    }
+	public BooleanValue(String string) {
+		name = string;
+		setState(false);
+	}
 
-    public String getName() {
-        return this.name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public boolean isState() {
-        return this.state;
-    }
+	public boolean isState() {
+		return state;
+	}
 
-    public void setName(String string) {
-        this.name = string;
-    }
+	public void setName(String string) {
+		name = string;
+	}
 
-    public void setState(boolean bl) {
-        this.state = bl;
-    }
+	public void setState(boolean bl) {
+		state = bl;
+	}
 }

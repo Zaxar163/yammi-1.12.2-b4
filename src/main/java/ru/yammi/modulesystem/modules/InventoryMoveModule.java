@@ -1,26 +1,25 @@
 package ru.yammi.modulesystem.modules;
 
-import ru.yammi.modulesystem.Module;
-import ru.yammi.modulesystem.ModuleCategory;
-import ru.yammi.eventsystem.events.UpdateEvent;
-import ru.yammi.eventsystem.EventTarget;
-import net.minecraft.client.gui.GuiChat;
-import net.minecraft.client.settings.KeyBinding;
 import org.lwjgl.input.Keyboard;
 
-public class InventoryMoveModule
-        extends Module {
+import net.minecraft.client.gui.GuiChat;
+import net.minecraft.client.settings.KeyBinding;
+import ru.yammi.eventsystem.EventTarget;
+import ru.yammi.eventsystem.events.UpdateEvent;
+import ru.yammi.modulesystem.Module;
+import ru.yammi.modulesystem.ModuleCategory;
 
-    public InventoryMoveModule() {
-        super("InventoryMove", ModuleCategory.MOVEMENT);
-    }
+public class InventoryMoveModule extends Module {
 
-    @EventTarget
-    public void onUpdate(UpdateEvent oTTDuKOxgEObFPc2) {
-        if (this.getState() && this.mc.currentScreen != null && !(this.mc.currentScreen instanceof GuiChat)) {
-            for (KeyBinding keyBinding : new KeyBinding[]{this.mc.gameSettings.keyBindForward, this.mc.gameSettings.keyBindBack, this.mc.gameSettings.keyBindLeft, this.mc.gameSettings.keyBindRight, this.mc.gameSettings.keyBindJump}) {
-                KeyBinding.setKeyBindState(keyBinding.getKeyCode(), Keyboard.isKeyDown(keyBinding.getKeyCode()));
-            }
-        }
-    }
+	public InventoryMoveModule() {
+		super("InventoryMove", ModuleCategory.MOVEMENT);
+	}
+
+	@EventTarget
+	public void onUpdate(UpdateEvent oTTDuKOxgEObFPc2) {
+		if (getState() && mc.currentScreen != null && !(mc.currentScreen instanceof GuiChat))
+			for (KeyBinding keyBinding : new KeyBinding[] { mc.gameSettings.keyBindForward, mc.gameSettings.keyBindBack,
+					mc.gameSettings.keyBindLeft, mc.gameSettings.keyBindRight, mc.gameSettings.keyBindJump })
+				KeyBinding.setKeyBindState(keyBinding.getKeyCode(), Keyboard.isKeyDown(keyBinding.getKeyCode()));
+	}
 }

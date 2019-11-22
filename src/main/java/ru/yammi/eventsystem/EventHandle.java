@@ -6,27 +6,27 @@ import java.util.List;
 
 final class EventHandle {
 
-    private Object handle;
-    private List<Method> methods = new ArrayList<Method>();
+	private Object handle;
+	private List<Method> methods = new ArrayList<>();
 
-    public EventHandle(Object object, List<Method> list) {
-        this.handle = object;
-        this.methods = list;
-    }
+	public EventHandle(Object object, List<Method> list) {
+		handle = object;
+		methods = list;
+	}
 
-    public Object getHandle() {
-        return this.handle;
-    }
+	public Object getHandle() {
+		return handle;
+	}
 
-    public List<Method> getMethods() {
-        return this.methods;
-    }
+	public List<Method> getMethods() {
+		return methods;
+	}
 
-    public void setHandle(Object object) {
-        this.handle = object;
-    }
+	public void setHandle(Object object) {
+		handle = object;
+	}
 
-    public void setMethods(List<Method> list) {
-        this.methods = list;
-    }
+	public void setMethods(List<Method> list) {
+		methods = list;
+	}
 }

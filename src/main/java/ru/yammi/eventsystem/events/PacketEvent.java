@@ -1,18 +1,17 @@
 package ru.yammi.eventsystem.events;
 
-import ru.yammi.eventsystem.Event;
 import net.minecraft.network.Packet;
+import ru.yammi.eventsystem.Event;
 
-public class PacketEvent
-        extends Event {
+public class PacketEvent extends Event {
 
-    private Packet<?> packet;
+	private Packet<?> packet;
 
-    public PacketEvent(Packet<?> packet) {
-        this.packet = packet;
-    }
+	public PacketEvent(Packet<?> packet) {
+		this.packet = packet;
+	}
 
-    public Packet<?> getPacket() {
-        return this.packet;
-    }
+	public Packet<?> getPacket() {
+		return packet;
+	}
 }

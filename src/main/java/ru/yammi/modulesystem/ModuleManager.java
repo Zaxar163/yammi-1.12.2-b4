@@ -1,8 +1,9 @@
 package ru.yammi.modulesystem;
 
-import ru.yammi.eventsystem.EventBus;
 import java.util.ArrayList;
 import java.util.List;
+
+import ru.yammi.eventsystem.EventBus;
 import ru.yammi.modulesystem.modules.AntiKnockbackModule;
 import ru.yammi.modulesystem.modules.AutoSprintModule;
 import ru.yammi.modulesystem.modules.ChestESPModule;
@@ -32,94 +33,90 @@ import ru.yammi.modulesystem.modules.TriggerBotModule;
 import ru.yammi.modulesystem.modules.VClipModule;
 import ru.yammi.modulesystem.modules.WallHackModule;
 import ru.yammi.modulesystem.modules.XRayModule;
+import ru.zaxar163.hacks.PacketHacks;
 
 public class ModuleManager {
 
-    private static List<Module> modules = new ArrayList<>();
+	private static List<Module> modules = new ArrayList<>();
 
-    public static void disableModule(String moduleName) {
-        Module module = ModuleManager.getModule(moduleName);
-        if (module != null) {
-            module.setState(false);
-        }
-    }
+	public static void disableModule(String moduleName) {
+		Module module = ModuleManager.getModule(moduleName);
+		if (module != null)
+			module.setState(false);
+	}
 
-    public static Module getModule(Class<?> moduleClass) {
-        for (Module module : modules) {
-            if (module.getClass() != moduleClass) {
-                continue;
-            }
-            return module;
-        }
-        return null;
-    }
+	public static Module getModule(Class<?> moduleClass) {
+		for (Module module : modules) {
+			if (module.getClass() != moduleClass)
+				continue;
+			return module;
+		}
+		return null;
+	}
 
-    public static Module getModule(String moduleName) {
-        for (Module module : modules) {
-            if (!module.getName().equals(moduleName)) {
-                continue;
-            }
-            return module;
-        }
-        return null;
-    }
+	public static Module getModule(String moduleName) {
+		for (Module module : modules) {
+			if (!module.getName().equals(moduleName))
+				continue;
+			return module;
+		}
+		return null;
+	}
 
-    public static List<Module> getModules() {
-        return modules;
-    }
+	public static List<Module> getModules() {
+		return modules;
+	}
 
-    public static boolean isModuleEnabled(String moduleName) {
-        Module module = ModuleManager.getModule(moduleName);
-        if (module != null) {
-            return module.getState();
-        }
-        return false;
-    }
+	public static boolean isModuleEnabled(String moduleName) {
+		Module module = ModuleManager.getModule(moduleName);
+		if (module != null)
+			return module.getState();
+		return false;
+	}
 
-    public static boolean isModuleEnabled(Class<?> moduleClass) {
-        Module module = ModuleManager.getModule(moduleClass);
-        if (module != null) {
-            return module.getState();
-        }
-        return false;
-    }
-    
-    private static void registerModule(Module module) {
-        EventBus.register(module);
-        modules.add(module);
-    }
+	public static boolean isModuleEnabled(Class<?> moduleClass) {
+		Module module = ModuleManager.getModule(moduleClass);
+		if (module != null)
+			return module.getState();
+		return false;
+	}
 
-    public static void loadModules() {
-        registerModule(new AntiKnockbackModule());
-        registerModule(new AutoSprintModule());
-        registerModule(new ChestESPModule());
-        registerModule(new ClickGUIModule());
-        registerModule(new ESPModule());
-        registerModule(new FastBreakModule());
-        registerModule(new FastBridgeModule());
-        registerModule(new FastLadderModule());
-        registerModule(new FlyModule());
-        registerModule(new FullbrightModule());
-        registerModule(new GhostModule());
-        registerModule(new HUDModule());
-        registerModule(new InventoryMoveModule());
-        registerModule(new KillauraModule());
-        registerModule(new LongJumpModule());
-        registerModule(new MultiJumpModule());
-        registerModule(new NameTagsModule());
-        registerModule(new NoFallModule());
-        registerModule(new NoWebModule());
-        registerModule(new NukerModule());
-        registerModule(new SpeedHackModule());
-        registerModule(new SpiderModule());
-        registerModule(new StepModule());
-        registerModule(new StrafeModule());
-        registerModule(new TracersModule());
-        registerModule(new TriggerBotModule());
-        registerModule(new VClipModule());
-        registerModule(new WallHackModule());
-        registerModule(new XRayModule());
-        
+	public static void registerModule(Module module) {
+		EventBus.register(module);
+		modules.add(module);
+	}
+
+	public static void loadModules() {
+		registerModule(new AntiKnockbackModule());
+		registerModule(new AutoSprintModule());
+		registerModule(new ChestESPModule());
+		registerModule(new ClickGUIModule());
+		registerModule(new ESPModule());
+		registerModule(new FastBreakModule());
+		registerModule(new FastBridgeModule());
+		registerModule(new FastLadderModule());
+		registerModule(new FlyModule());
+		registerModule(new FullbrightModule());
+		registerModule(new GhostModule());
+		registerModule(new HUDModule());
+		registerModule(new InventoryMoveModule());
+		registerModule(new KillauraModule());
+		registerModule(new LongJumpModule());
+		registerModule(new MultiJumpModule());
+		registerModule(new NameTagsModule());
+		registerModule(new NoFallModule());
+		registerModule(new NoWebModule());
+		registerModule(new NukerModule());
+		registerModule(new SpeedHackModule());
+		registerModule(new SpiderModule());
+		registerModule(new StepModule());
+		registerModule(new StrafeModule());
+		registerModule(new TracersModule());
+		registerModule(new TriggerBotModule());
+		registerModule(new VClipModule());
+		registerModule(new WallHackModule());
+		registerModule(new XRayModule());
+		PacketHacks.register();
 // --- Original Code ---
 //        File file = new File("build\\libs\\modid-1.0.jar");
 //        Main.getInstance().log(String.valueOf(new StringBuilder().append("Self file ").append(file.getAbsolutePath())));
@@ -145,7 +142,7 @@ public class ModuleManager {
 //        } catch (Exception exception) {
 //            exception.printStackTrace();
 //        }
-    }
+	}
 
 //    private static void walkDir(File file) {
 //        String string;
